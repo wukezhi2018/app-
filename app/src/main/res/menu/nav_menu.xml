@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/pin_drop"
+            android:title="定位"
+            android:icon="@drawable/pin_drop"
+            />
+        <item
+            android:id="@+id/lock"
+            android:title="修改密码"
+            android:icon="@drawable/lock"
+            />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/help"
+            android:title="疑问意见"
+            />
+        <item
+            android:id="@+id/setting"
+            android:title="系统设置"
+            android:icon="@drawable/setting"
+            />
+        <item
+            android:id="@+id/exit"
+            android:icon="@drawable/exit"
+            android:title="退出登录"
+            />
+    </group>
+
+</menu>
