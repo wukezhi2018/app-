@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Button loginButton;//登录按钮
     private TextView resetPassword;//忘记密码
     private TextView register;//注册
+    public static final String EXIT_APP = "exit_app";//退出标志
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_main);
         Bmob.initialize(MainActivity.this,appkey);
+        BmobUser bmobUser=BmobUser.getCurrentUser();
+        if(bmobUser!=null){
+            Intent intent=new Intent(MainActivity.this,WelcomeActivity.class);
+            intent.putExtra("username",bmobUser.getUsername());
+            startActivity(intent);
+        }
         bingPicImg=(ImageView)findViewById(R.id.login_img);
         loadBingPic();
         register=(TextView)findViewById(R.id.register);
@@ -183,5 +190,13 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         });
+    }
+    //退出应用
+    @Override
+    protected void onNewIntent(Intent intent) {
+        boolean exit_app = intent.getBooleanExtra(EXIT_APP, false);
+        if (exit_app) {
+            finish();
+        }
     }
 }

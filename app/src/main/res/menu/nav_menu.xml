@@ -17,9 +17,9 @@
             android:title="疑问意见"
             />
         <item
-            android:id="@+id/setting"
-            android:title="系统设置"
-            android:icon="@drawable/setting"
+            android:id="@+id/exit_app"
+            android:title="退出app"
+            android:icon="@drawable/exit_app"
             />
         <item
             android:id="@+id/exit"

@@ -10,13 +10,28 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <include layout="@layout/welcome_title"/>
-        <ImageView
+        <!--内容-->
+        <android.support.v4.view.ViewPager
+            android:background="#ffff"
+            android:layout_gravity="center"
+            android:id="@+id/welcome_viewpager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/add"
+            android:layout_height="0dp"
+            android:layout_weight="8"
             />
+        <!--底部导航-->
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/welcome_bottom_nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            android:background="?attr/colorPrimary"
+            app:itemIconTint="@drawable/selector_bnv"
+            app:itemTextColor="@drawable/selector_bnv"
+            app:menu="@menu/bottombar_menu" />
     </LinearLayout>
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
